@@ -28,12 +28,6 @@ You only need a free GitHub account; no coding tools are required.
 
 To update the site later, upload the changed file again with the same name. GitHub Pages republishes automatically.
 
-## Run it without the internet
-
-Double-click `index.html` to open it in a browser. Everything works offline except the custom fonts, which fall back to system fonts.
-
----
-
 ## How to present it
 
 The site has four tabs: **Rain's app**, **Doctor**, **Organiser** and **Watch & sensor**. Press **P** (or click **Presenter**) to open the presenter controls.
