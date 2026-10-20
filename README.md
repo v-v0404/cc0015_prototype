@@ -11,22 +11,9 @@ Built for the CC0015 group project, using the persona "Rain".
 
 > This is a prototype. All people, clinics and readings are fictional sample data, and nothing in it is medical advice.
 
-**Live demo:** `https://<your-username>.github.io/<repo-name>/` (replace with your link after setup)
+**Live demo:** `https://v-v0404.github.io/cc0015_prototype/`
 
 ---
-
-## Put it on GitHub Pages
-
-You only need a free GitHub account; no coding tools are required.
-
-1. Sign in at [github.com](https://github.com) and click **New repository**.
-2. Name it, for example `fit2join`, set it to **Public**, and click **Create repository**.
-3. On the new repository page, click **uploading an existing file**.
-4. Drag in all five files from this folder: `index.html`, `styles.css`, `app.js`, `favicon.svg` and `README.md`. Click **Commit changes**.
-5. Go to **Settings → Pages**. Under **Build and deployment**, set **Source** to **Deploy from a branch**, choose the **main** branch and the **/ (root)** folder, then click **Save**.
-6. Wait a minute or two and refresh. Your link appears at the top of the Pages settings, in the form `https://<your-username>.github.io/fit2join/`.
-
-To update the site later, upload the changed file again with the same name. GitHub Pages republishes automatically.
 
 ## How to present it
 
@@ -57,16 +44,5 @@ The panel also has:
 5. Press **6**: the LED turns purple. Log a dose on Rain's **Insulin** screen to clear it.
 6. Untick **Rain's phone has internet** to show the no-signal case, then tick it again.
 7. **Nurse** screen: tap send to play the scripted chat. Finish on the organiser's **Short-term access** box.
-
-## Files
-
-| File | What it does |
-| --- | --- |
-| `index.html` | Page structure: top bar, tabs and presenter panel |
-| `styles.css` | All styling (dark plum glass theme, LED colours) |
-| `app.js` | Demo logic: simulated glucose, alerts, certificate flow, chat script |
-| `favicon.svg` | Browser tab icon |
-
-To change names, the event or the chat script, edit the constants near the top of `app.js` (`DOCTOR`, `ORG`, `EVENT`, `BUDDY`, `SCRIPT`).
 
 Progress such as a signed certificate is saved in your own browser only. **Reset the demo** clears it.
