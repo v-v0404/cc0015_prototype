@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fit2Join</title>
+<meta name="description" content="Clickable prototype of Fit2Join: a CGM sensor, phone and watch app that lets young adults with type 1 diabetes join organised activities with a doctor-signed digital certificate.">
+<meta name="theme-color" content="#130F18">
+<meta property="og:title" content="Fit2Join">
+<meta property="og:description" content="Judged on your record, not your label. A clickable prototype for young adults with type 1 diabetes.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Sora:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="brand">
+      <svg viewBox="0 0 30 30" aria-hidden="true"><rect x="1" y="1" width="28" height="28" rx="9" fill="var(--mauve-deep)"/><circle class="st" id="logo-led" data-state="ok" cx="15" cy="15" r="5.5" fill="var(--c)"/></svg>
+      <div><span class="brand-name">Fit2Join</span><span class="brand-tag">Judged on your record, not your label</span></div>
+    </div>
+    <nav class="tabs" role="tablist" aria-label="Choose a view">
+      <button class="tab" role="tab" data-action="tab" data-tab="rain" aria-selected="true">Rain's app</button>
+      <button class="tab" role="tab" data-action="tab" data-tab="doctor" aria-selected="false">Doctor <span class="badge" id="doc-badge" hidden>1</span></button>
+      <button class="tab" role="tab" data-action="tab" data-tab="organiser" aria-selected="false">Organiser <span class="badge" id="org-badge" hidden>!</span></button>
+      <button class="tab" role="tab" data-action="tab" data-tab="watch" aria-selected="false">Watch &amp; sensor</button>
+    </nav>
+    <button class="presenter-btn st" id="presenter-toggle" data-state="ok" data-action="toggle-presenter" aria-expanded="false" aria-controls="presenter"><span class="led-dot"></span>Presenter <kbd>P</kbd></button>
+  </div>
+</header>
+
+<main id="app" class="wrap" aria-live="off"></main>
+
+<aside id="presenter" class="presenter" hidden aria-label="Presenter controls">
+  <div class="pp-head"><strong>Presenter controls</strong><button class="icon-btn" data-action="toggle-presenter" aria-label="Close presenter controls">&times;</button></div>
+  <div class="pp-reading st" id="pp-reading" data-state="ok"><span class="led-dot"></span><span class="v" id="pp-val">6.2</span><span class="muted">mmol/L</span><span class="l" id="pp-label">In range</span></div>
+  <div class="pp-grid" id="pp-grid"></div>
+  <label class="pp-switch"><input type="checkbox" id="pp-online" checked> Rain's phone has internet</label>
+  <div class="pp-row">
+    <button class="btn btn-sm" data-action="ff-cert">Skip ahead: certificate signed and shared</button>
+    <button class="btn btn-sm" data-action="reset">Reset the demo</button>
+  </div>
+  <p class="pp-hint">Press P to show or hide this panel, and 1 to 7 to switch scenarios. A new reading arrives every 1.5 seconds; each stands for 5 minutes.</p>
+</aside>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<noscript><p style="padding:24px;color:#F7F2F6">Fit2Join needs JavaScript turned on to run the prototype.</p></noscript>
+</body>
+</html>
