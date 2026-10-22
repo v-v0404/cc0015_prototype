@@ -242,7 +242,7 @@ function chartSVG(hist, state, compact) {
     `<text x="${w - padR + 7}" y="${Y(10) + 3.5}" font-size="9.5" fill="var(--faint)" font-family="var(--font-mono)">10</text>
      <text x="${w - padR + 7}" y="${Y(3.9) + 3.5}" font-size="9.5" fill="var(--faint)" font-family="var(--font-mono)">3.9</text>`;
   return `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="Glucose over the last 3 hours, now ${fmtV(last)} mmol/L">
-    <rect x="${padL}" y="${Y(10)}" width="${w - padL - padR}" height="${Y(3.9) - Y(10)}" rx="6" fill="#ffffff" fill-opacity=".045"/>
+    <rect x="${padL}" y="${Y(10)}" width="${w - padL - padR}" height="${Y(3.9) - Y(10)}" rx="6" fill="var(--band)"/>
     <line x1="${padL}" x2="${w - padR}" y1="${Y(3.9)}" y2="${Y(3.9)}" stroke="var(--led-low)" stroke-opacity=".45" stroke-dasharray="2 4"/>
     <line x1="${padL}" x2="${w - padR}" y1="${Y(10)}" y2="${Y(10)}" stroke="var(--led-high)" stroke-opacity=".45" stroke-dasharray="2 4"/>
     ${ticks}
@@ -290,9 +290,9 @@ function viewRain() {
   const nav = [['home','Home',I.home],['cert','Certificate',I.cert],['insulin','Insulin',I.pen],['chat','Nurse',I.chat]]
     .map(([id, label, ic]) => `<button class="nav-btn" data-action="go" data-screen="${id}" ${S.rainScreen === id ? 'aria-current="page"' : ''}>${ic}<span>${label}</span></button>`).join('');
   return `<section class="rain-layout" aria-label="Rain's phone app">
-    <div class="phone"><div class="phone-screen">
+    <div class="phone"><div class="phone-screen device-dark">
       <div class="statusbar"><span id="phone-clock">${hm(new Date())}</span><span class="sb-right" id="sb-icons">${sbIcons()}</span></div>
-      <div class="app-top"><div class="app-brand"><svg viewBox="0 0 30 30" aria-hidden="true"><rect x="1" y="1" width="28" height="28" rx="9" fill="var(--mauve-deep)"/><circle class="st" id="app-led" data-state="${led().key}" cx="15" cy="15" r="5.5" fill="var(--c)"/></svg>Fit2Join</div><div class="app-user" aria-label="Rain">R</div></div>
+      <div class="app-top"><div class="app-brand"><svg viewBox="0 0 30 30" aria-hidden="true"><rect x="1" y="1" width="28" height="28" rx="9" fill="var(--brand)"/><circle class="st" id="app-led" data-state="${led().key}" cx="15" cy="15" r="5.5" fill="var(--c)"/></svg>Fit2Join</div><div class="app-user" aria-label="Rain">R</div></div>
       <div class="app-body" id="app-body">${rainScreenHTML()}</div>
       ${S.rainScreen === 'chat' ? composerHTML() : ''}
       <nav class="app-nav" aria-label="App sections">${nav}</nav>
@@ -625,7 +625,7 @@ function viewWatch() {
   return `<section aria-label="Watch and sensor">
     <div class="hw-intro"><h1>One colour, on every device</h1><p class="muted">The sensor's LED and the watch show the same state, so Rain, his buddy and the organiser can read it at a glance.</p></div>
     <div class="hw-row">
-      <figure class="hw"><div class="watch"><div class="strap"></div><div class="watch-case" id="watch-case"><div class="watch-screen st" id="watch-screen" data-state="${l.key}">${watchFaceHTML()}</div><div class="crown"></div></div><div class="strap bottom"></div></div><figcaption>Smartwatch app</figcaption></figure>
+      <figure class="hw"><div class="watch"><div class="strap"></div><div class="watch-case" id="watch-case"><div class="watch-screen device-dark st" id="watch-screen" data-state="${l.key}">${watchFaceHTML()}</div><div class="crown"></div></div><div class="strap bottom"></div></div><figcaption>Smartwatch app</figcaption></figure>
       <figure class="hw"><div class="sensor-stage"><div class="sensor"><div class="sensor-led st" id="sensor-led" data-state="${l.key}" role="img" aria-label="Sensor LED: ${l.label}"></div></div></div><figcaption>Fit2Join sensor, worn on the upper arm</figcaption></figure>
     </div>
     <div class="legend" id="legend">${legend}</div>
